@@ -83,4 +83,5 @@ def handle_list_threads():
     print(f"Active Threads: {active_threads}")
 
 if __name__ == '__main__':
-    socketio.run(app, debug=True)
+    socketio.run(app)
+    #socketio.run(app, debug=True)
