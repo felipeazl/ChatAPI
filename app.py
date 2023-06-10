@@ -1,8 +1,10 @@
 from flask import Flask, request
 from flask_socketio import SocketIO, emit
+from flask_cors import CORS
 import threading
 
 app = Flask(__name__)
+CORS(app)
 app.config['SECRET_KEY'] = 'secret_key'
 socketio = SocketIO(app, cors_allowed_origins='*', transports=['websocket'])
 

@@ -2,3 +2,4 @@ Flask
 Flask-SocketIO
 Gunicorn
 simple-websocket
+flask-cors
