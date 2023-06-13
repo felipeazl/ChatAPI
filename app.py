@@ -1,13 +1,13 @@
 from flask import Flask, request
 from flask_socketio import SocketIO, emit
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 import threading
 
 app = Flask(__name__)
 CORS(app)
 # app.config['SECRET_KEY'] = 'secret_key'
-# socketio = SocketIO(app, transports=['websocket'])
-socketio = SocketIO(app, transports=['websocket'])
+CORS(app,resources={r"/*":{"origins":"*"}})
+socketio = SocketIO(app,cors_allowed_origins="*")
 
 threads = {}
 thread_count = 0
@@ -43,7 +43,6 @@ def get_active_threads():
         return active_thread_ids
 
 @socketio.on('connect')
-@cross_origin(origin='http://localhost:8080')
 def handle_connect():
     emit('connected', {'data': 'Connected'})
 
