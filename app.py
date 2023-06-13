@@ -43,7 +43,7 @@ def get_active_threads():
         return active_thread_ids
 
 @socketio.on('connect')
-@cross_origin(origin='http://localhost:8000')
+@cross_origin(origin='http://localhost:8080')
 def handle_connect():
     emit('connected', {'data': 'Connected'})
 
