@@ -5,8 +5,9 @@ import threading
 
 app = Flask(__name__)
 CORS(app)
-app.config['SECRET_KEY'] = 'secret_key'
-socketio = SocketIO(app, cors_allowed_origins='*', transports=['websocket'])
+# app.config['SECRET_KEY'] = 'secret_key'
+# socketio = SocketIO(app, transports=['websocket'])
+socketio = SocketIO(app)
 
 threads = {}
 thread_count = 0
@@ -86,4 +87,3 @@ def handle_list_threads():
 
 if __name__ == '__main__':
     socketio.run(app)
-    #socketio.run(app, debug=True)
