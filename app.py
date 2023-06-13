@@ -4,10 +4,9 @@ from flask_cors import CORS
 import threading
 
 app = Flask(__name__)
-CORS(app)
 # app.config['SECRET_KEY'] = 'secret_key'
 CORS(app,resources={r"/*":{"origins":"*"}})
-socketio = SocketIO(app,cors_allowed_origins="*")
+socketio = SocketIO(app, cors_allowed_origins="*", transports=['websocket'])
 
 threads = {}
 thread_count = 0
