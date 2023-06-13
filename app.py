@@ -8,7 +8,7 @@ CORS(app)
 
 # app.config['SECRET_KEY'] = 'secret_key'
 # socketio = SocketIO(app, transports=['websocket'])
-socketio = SocketIO(app, cors_allowed_origins=['http://localhost:8080'], transports=['websocket'])
+socketio = SocketIO(app, transports=['websocket'], cors_allowed_origins=['http://localhost:8080'])
 
 threads = {}
 thread_count = 0
