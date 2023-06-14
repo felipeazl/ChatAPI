@@ -1,6 +1,6 @@
 Flask
 Flask-SocketIO
 Gunicorn
-eventlet
+eventlet==0.30.2
 simple-websocket
 flask-cors
