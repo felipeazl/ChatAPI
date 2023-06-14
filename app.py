@@ -1,6 +1,8 @@
 from flask import Flask, request
 from flask_socketio import SocketIO, emit
 from flask_cors import CORS
+from gevent import monkey
+monkey.patch_all()
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
@@ -21,4 +23,3 @@ def handle_message(data):
 
 if __name__ == '__main__':
     socketio.run(app)
-    
